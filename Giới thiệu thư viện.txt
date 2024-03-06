@@ -1,0 +1,33 @@
+							Hệ thống quản lí thư viện
+Mô tả: 
+	Hệ thống quản lý thư viện giúp Librarian theo dõi các cuốn sách và quản lý hồ sơ của các Member. Thư viện có các cuốn sách gồm
+những thông tin như ISBN (mã sách), Tittle (tiêu đề), Author (tác giả), Manuafacturer (Nhà xuất bản).
+Form Trang Chủ:
+	Luật khi tham gia vào thư viện sẽ được dán ở đây để các Member có thể thấy, Librarian và Member có thể đăng nhập ở đây.
+Form Đăng nhâp:
+	Khi đăng nhập sẽ có hai vai trò được hiển thị. Nếu là Member thì chọn Member hoặc Librarian thì chọn Librarian còn nếu chưa có 
+tài khoản thì phải đăng kí. Giao diện sẽ tự đổi sang sau khi đăng nhập thành công.
+Form Đăng kí:
+	Để thu thập thông tin cơ bản của người dùng giúp hệ thống dễ dàng quản lý. Lưu ý: người dùng không được nhỏ hơn 5 tuổi.
+Form Librarian:
+	Khi đăng nhập thành công form này bạn là Librarian, chức năng:
+	- Quản lý sách (Manage Book): có thể tìm kiếm sách (bằng ISBN, Tittle hoặc Author), thêm sách (mỗi cuốn sách có mã ISBN là độc
+	nhất nên chỉ được thêm sách có mã ISBN đúng 1 lần, nếu trùng chương trình sẽ báo đã có mã sách).
+	- Quản lý thành viên (View member details): có thể thấy được chi tiết các thành viên và những thành viên đã mượn sách
+	- Tạo báo cáo (Generate Report): xuất thông tin sách, thông tin thành viên, giao dịch mượn,trả sách của thành viên
+Form Member :
+	Khi đăng nhập thành công form này bạn là Member, chức năng:
+	- Tìm kiếm sách (Search Books): ISBN, Tittle hoặc Author
+	- Mượn sách (Issue Books): Member có thể mượn sách trong thư viện khi trong danh sách thư viện còn sách (Những trường hợp không 
+	mượn được như: nhập sai ISBN, không có sách trong thư viện, một số cuốn sách chỉ được đọc tại thư viện hoặc sách đã được mượn hết.
+	Khi mượn sách Member sẽ được xuất phiếu.
+	- Trả sách (Return Books): Member có thể trả sách chỉ khi Member đã mượn cuốn sách đó của thư viện. Khi trả sách Member 
+	sẽ được xuất phiếu.
+Phần mền đảm bảo được cách tính chất cơ bản của oop: 
+	- Kế thừa: Lớp Member, Librarian kế thừa từ lớp Person (các đặc tính chung như tên, tuổi, địa chỉ,...)
+	- Đóng gói: Các Field trong lớp Person được khai báo là private và muốn truy cập thì phải thông qua Property bằng từ khóa Public
+	- Đa Hình: Phương thức printDetail của Person được các lớp con kế thừa bằng từ khóa Overide có thể ghi đè lên hoặc giữ nguyên
+	phương thức cha, phương thức searchBook được overload khi một phương thức mà có nhiều tham số truyền vào.
+	- Tính trừu tượng: Lớp Person được khai bảo abstract class do không có khởi tạo hàm dựng, các interface ActionLibrarian và
+	ActionMember được khai báo để bắt buộc các lớp con phải triển khai.
+
